@@ -108,9 +108,10 @@ project "GLFW"
 		sanitize { "Address" }
 		flags { "NoRuntimeChecks", "NoIncrementalLink" }
 
-	filter "configurations:Release"
+	filter {"system:windows","configurations:Release"}
 		runtime "Release"
 		optimize "speed"
+		buildoptions "/MT"
 
     filter "configurations:Dist"
 		runtime "Release"
